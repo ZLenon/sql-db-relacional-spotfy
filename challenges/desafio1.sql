@@ -204,12 +204,13 @@ CREATE TABLE
 
 INSERT INTO
     follows (user_id, artist_id)
-VALUES (1, 2), (1, 3), (2, 1), (2, 3), (3, 2), (4, 4), (5, 5), (5, 6), (6, 6), (6, 1), (7, 6), (8, 0), (9, 3), (10, 2);
+VALUES (1, 2), (1, 1), (1, 3), (2, 1), (2, 3), (3, 2), (4, 4), (5, 5), (5, 6), (6, 6), (6, 1), (7, 6), (9, 3), (10, 2);
 
 CREATE TABLE
     history (
         user_id INT NOT NULL,
         song_id INT NOT NULL,
+        PRIMARY KEY (user_id, song_id),
         date_play TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP(),
         FOREIGN KEY (user_id) REFERENCES users(user_id),
         FOREIGN KEY (song_id) REFERENCES songs(song_id)
