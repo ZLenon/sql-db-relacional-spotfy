@@ -8,7 +8,7 @@ CREATE TABLE
     asignature (
         signature_id INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
         signature_box VARCHAR(50) NOT NULL,
-        signature_value INT NOT NULL
+        signature_value DECIMAL(5, 2) NOT NULL
     );
 
 INSERT INTO
